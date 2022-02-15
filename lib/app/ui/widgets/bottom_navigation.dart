@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_weather/app/ui/screens/forecast_screen.dart';
+import 'package:test_flutter_weather/app/ui/screens/today_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({ Key? key }) : super(key: key);
@@ -8,8 +10,43 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    TodayScreen(),
+    ForecastScreen()
+    
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
-    return const Text('2');
+   return Scaffold(
+      
+      body:
+        _widgetOptions.elementAt(_selectedIndex),
+      
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Today',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'ForeCast',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+    );
   }
 }
