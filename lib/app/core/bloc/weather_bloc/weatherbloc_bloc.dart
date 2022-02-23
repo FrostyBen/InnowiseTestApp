@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:test_flutter_weather/app/core/models/today_weather.dart';
+
 import 'package:test_flutter_weather/app/core/network/API/API_client.dart';
 import 'package:test_flutter_weather/app/core/network/API/model/current_weather.dart';
 part 'weatherbloc_event.dart';
