@@ -1,15 +1,15 @@
 part of 'weatherbloc_bloc.dart';
 
 @immutable
-abstract class WeatherblocState {}
+abstract class WeatherState {}
 
-class WeatherblocInitial extends WeatherblocState {}
+class WeatherblocInitial extends WeatherState {}
 
-class WeatherStateLoading extends WeatherblocState{}
-class WeatherStateError extends WeatherblocState{}
-class WeatherStateLoaded extends WeatherblocState{
-final TodayWeather todayWeather;
+class WeatherStateLoading extends WeatherState{}
+class WeatherStateError extends WeatherState{}
+class WeatherStateLoaded extends WeatherState{
+final CurrentWeather currentWeather;
 
-  WeatherStateLoaded(this.todayWeather);
+  WeatherStateLoaded(this.currentWeather);
 
 }
