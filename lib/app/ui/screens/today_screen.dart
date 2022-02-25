@@ -47,8 +47,8 @@ String getDirection(int direction){
                   const SizedBox(height: 15),
                    Image.asset(
                     'assets/${state.currentWeather.weather!.first.icon!}.png',
-                    height: 100,
-                    width: 100,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.height * 0.15,
                   ),
                   const SizedBox(height: 10),
                  Text(
@@ -59,7 +59,7 @@ String getDirection(int direction){
                     height: 20,
                   ),
                    Text(
-                    (state.currentWeather.main!.temp! -273.15).toString() + ' °C' ,
+                    (state.currentWeather.main!.temp!.toInt() -273).toString() + ' °C' ,
                     style: TextStyle(color: Colors.blue, fontSize: 35),
                   ),
                   const Divider(
@@ -106,8 +106,8 @@ String getDirection(int direction){
                       ),
                     ],
                   ),
-                  const SizedBox(
-                    height: 30,
+                   SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,7 +155,7 @@ String getDirection(int direction){
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: MediaQuery.of(context).size.height * 0.03,
                   )
                 ],
               ),

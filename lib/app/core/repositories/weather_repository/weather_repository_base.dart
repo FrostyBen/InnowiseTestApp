@@ -2,6 +2,6 @@ import 'package:test_flutter_weather/app/core/network/API/model/current_weather.
 import 'package:test_flutter_weather/app/core/network/API/model/forecast_weather.dart';
 
 abstract class WeatherRepositoryBase {
-  Future<CurrentWeather> getTodayWeather(String city);
-  Future<ForecastWeather> getForecastWeather(String city);
+  Future<CurrentWeather> getTodayWeather();
+  Future<ForecastWeather> getForecastWeather();
 }

@@ -26,11 +26,11 @@ class ForecastList extends StatelessWidget {
                 children: [
                    Image.asset(
                     'assets/${element.weather!.first.icon}.png',
-                    height: 100,
-                    width: 100,
+                    height: MediaQuery.of(context).size.height * 0.13,
+                    width: MediaQuery.of(context).size.height * 0.13,
                   ),
-                  const SizedBox(
-                    width: 20,
+                   SizedBox(
+                    width: MediaQuery.of(context).size.width *0.01,
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
