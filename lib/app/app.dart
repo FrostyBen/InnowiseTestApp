@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import './ui/widgets/bottom_navigation.dart';
+import 'core/bloc/bloc/forecast_bloc.dart';
 import 'core/bloc/weather_bloc/weatherbloc_bloc.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,14 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => WeatherBloc()..add(GetWeather('hui')),
-      child: MaterialApp(
-        theme: ThemeData.light().copyWith(
-          iconTheme: const IconThemeData(
-            color: Color.fromARGB(255, 230, 167, 31),
+      create: (context) => ForecastBloc()..add(GetForecastEvent()),
+      child: BlocProvider(
+        create: (context) => WeatherBloc()..add(GetWeather('hui')),
+        child: MaterialApp(
+          theme: ThemeData.light().copyWith(
+            iconTheme: const IconThemeData(
+              color: Color.fromARGB(255, 230, 167, 31),
+            ),
           ),
+          home: Scaffold(bottomNavigationBar: BottomNavigation()),
         ),
-        home: Scaffold(bottomNavigationBar: BottomNavigation()),
       ),
     );
   }

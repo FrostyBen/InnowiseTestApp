@@ -2,11 +2,16 @@ import 'package:test_flutter_weather/app/core/bloc/weather_bloc/weatherbloc_bloc
 
 import 'package:test_flutter_weather/app/core/network/API/API_client.dart';
 import 'package:test_flutter_weather/app/core/network/API/model/current_weather.dart';
+import 'package:test_flutter_weather/app/core/network/API/model/forecast_weather.dart';
 import 'package:test_flutter_weather/app/core/repositories/weather_repository/weather_repository_base.dart';
 
 class WeatherRepositoryImpl extends WeatherRepositoryBase {
   @override
   Future<CurrentWeather> getTodayWeather(String city) {
     return APIClient().getWeather();
+  }
+
+  Future <ForecastWeather> getForecastWeather(String city){
+    return APIClient().getForecast();
   }
 }
