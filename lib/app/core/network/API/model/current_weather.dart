@@ -38,33 +38,33 @@ class CurrentWeather {
     factory CurrentWeather.fromJson(Map<String, dynamic> json) => CurrentWeather(
         coord: json["coord"] == null ? null : Coord.fromJson(json["coord"]),
         weather: json["weather"] == null ? null : List<Weather>.from(json["weather"].map((x) => Weather.fromJson(x))),
-        base: json["base"] == null ? null : json["base"],
+        base: json["base"],
         main: json["main"] == null ? null : Main.fromJson(json["main"]),
-        visibility: json["visibility"] == null ? null : json["visibility"],
+        visibility: json["visibility"],
         wind: json["wind"] == null ? null : Wind.fromJson(json["wind"]),
         clouds: json["clouds"] == null ? null : Clouds.fromJson(json["clouds"]),
-        dt: json["dt"] == null ? null : json["dt"],
+        dt: json["dt"],
         sys: json["sys"] == null ? null : Sys.fromJson(json["sys"]),
-        timezone: json["timezone"] == null ? null : json["timezone"],
-        id: json["id"] == null ? null : json["id"],
-        name: json["name"] == null ? null : json["name"],
-        cod: json["cod"] == null ? null : json["cod"],
+        timezone: json["timezone"],
+        id: json["id"],
+        name: json["name"],
+        cod: json["cod"],
     );
 
     Map<String, dynamic> toJson() => {
         "coord": coord == null ? null : coord!.toJson(),
         "weather": weather == null ? null : List<dynamic>.from(weather!.map((x) => x.toJson())),
-        "base": base == null ? null : base,
+        "base": base,
         "main": main == null ? null : main!.toJson(),
-        "visibility": visibility == null ? null : visibility,
+        "visibility": visibility,
         "wind": wind == null ? null : wind!.toJson(),
         "clouds": clouds == null ? null : clouds!.toJson(),
-        "dt": dt == null ? null : dt,
+        "dt": dt,
         "sys": sys == null ? null : sys!.toJson(),
-        "timezone": timezone == null ? null : timezone,
-        "id": id == null ? null : id,
-        "name": name == null ? null : name,
-        "cod": cod == null ? null : cod,
+        "timezone": timezone,
+        "id": id,
+        "name": name,
+        "cod": cod,
     };
 }
 
@@ -80,11 +80,11 @@ class Clouds {
     String toRawJson() => json.encode(toJson());
 
     factory Clouds.fromJson(Map<String, dynamic> json) => Clouds(
-        all: json["all"] == null ? null : json["all"],
+        all: json["all"],
     );
 
     Map<String, dynamic> toJson() => {
-        "all": all == null ? null : all,
+        "all": all,
     };
 }
 
@@ -107,8 +107,8 @@ class Coord {
     );
 
     Map<String, dynamic> toJson() => {
-        "lon": lon == null ? null : lon,
-        "lat": lat == null ? null : lat,
+        "lon": lon,
+        "lat": lat,
     };
 }
 
@@ -138,17 +138,17 @@ class Main {
         feelsLike: json["feels_like"] == null ? null : json["feels_like"].toDouble(),
         tempMin: json["temp_min"] == null ? null : json["temp_min"].toDouble(),
         tempMax: json["temp_max"] == null ? null : json["temp_max"].toDouble(),
-        pressure: json["pressure"] == null ? null : json["pressure"],
-        humidity: json["humidity"] == null ? null : json["humidity"],
+        pressure: json["pressure"],
+        humidity: json["humidity"],
     );
 
     Map<String, dynamic> toJson() => {
-        "temp": temp == null ? null : temp,
-        "feels_like": feelsLike == null ? null : feelsLike,
-        "temp_min": tempMin == null ? null : tempMin,
-        "temp_max": tempMax == null ? null : tempMax,
-        "pressure": pressure == null ? null : pressure,
-        "humidity": humidity == null ? null : humidity,
+        "temp": temp,
+        "feels_like": feelsLike,
+        "temp_min": tempMin,
+        "temp_max": tempMax,
+        "pressure": pressure,
+        "humidity": humidity,
     };
 }
 
@@ -174,21 +174,21 @@ class Sys {
     String toRawJson() => json.encode(toJson());
 
     factory Sys.fromJson(Map<String, dynamic> json) => Sys(
-        type: json["type"] == null ? null : json["type"],
-        id: json["id"] == null ? null : json["id"],
+        type: json["type"],
+        id: json["id"],
         message: json["message"] == null ? null : json["message"].toDouble(),
-        country: json["country"] == null ? null : json["country"],
-        sunrise: json["sunrise"] == null ? null : json["sunrise"],
-        sunset: json["sunset"] == null ? null : json["sunset"],
+        country: json["country"],
+        sunrise: json["sunrise"],
+        sunset: json["sunset"],
     );
 
     Map<String, dynamic> toJson() => {
-        "type": type == null ? null : type,
-        "id": id == null ? null : id,
-        "message": message == null ? null : message,
-        "country": country == null ? null : country,
-        "sunrise": sunrise == null ? null : sunrise,
-        "sunset": sunset == null ? null : sunset,
+        "type": type,
+        "id": id,
+        "message": message,
+        "country": country,
+        "sunrise": sunrise,
+        "sunset": sunset,
     };
 }
 
@@ -210,17 +210,17 @@ class Weather {
     String toRawJson() => json.encode(toJson());
 
     factory Weather.fromJson(Map<String, dynamic> json) => Weather(
-        id: json["id"] == null ? null : json["id"],
-        main: json["main"] == null ? null : json["main"],
-        description: json["description"] == null ? null : json["description"],
-        icon: json["icon"] == null ? null : json["icon"],
+        id: json["id"],
+        main: json["main"],
+        description: json["description"],
+        icon: json["icon"],
     );
 
     Map<String, dynamic> toJson() => {
-        "id": id == null ? null : id,
-        "main": main == null ? null : main,
-        "description": description == null ? null : description,
-        "icon": icon == null ? null : icon,
+        "id": id,
+        "main": main,
+        "description": description,
+        "icon": icon,
     };
 }
 
@@ -239,11 +239,11 @@ class Wind {
 
     factory Wind.fromJson(Map<String, dynamic> json) => Wind(
         speed: json["speed"] == null ? null : json["speed"].toDouble(),
-        deg: json["deg"] == null ? null : json["deg"],
+        deg: json["deg"],
     );
 
     Map<String, dynamic> toJson() => {
-        "speed": speed == null ? null : speed,
-        "deg": deg == null ? null : deg,
+        "speed": speed,
+        "deg": deg,
     };
 }

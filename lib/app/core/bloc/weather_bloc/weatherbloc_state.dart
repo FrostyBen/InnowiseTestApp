@@ -5,11 +5,12 @@ abstract class WeatherState {}
 
 class WeatherblocInitial extends WeatherState {}
 
-class WeatherStateLoading extends WeatherState{}
-class WeatherStateError extends WeatherState{}
-class WeatherStateLoaded extends WeatherState{
-final CurrentWeather currentWeather;
+class WeatherStateLoading extends WeatherState {}
+
+class WeatherStateError extends WeatherState {}
+
+class WeatherStateLoaded extends WeatherState {
+  final CurrentWeather currentWeather;
 
   WeatherStateLoaded(this.currentWeather);
-
 }

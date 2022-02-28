@@ -26,9 +26,9 @@ class ForecastWeather {
 
   factory ForecastWeather.fromJson(Map<String, dynamic> json) =>
       ForecastWeather(
-        cod: json["cod"] == null ? null : json["cod"],
-        message: json["message"] == null ? null : json["message"],
-        cnt: json["cnt"] == null ? null : json["cnt"],
+        cod: json["cod"],
+        message: json["message"],
+        cnt: json["cnt"],
         list: json["list"] == null
             ? null
             : List<ListElement>.from(
@@ -37,9 +37,9 @@ class ForecastWeather {
       );
 
   Map<String, dynamic> toJson() => {
-        "cod": cod == null ? null : cod,
-        "message": message == null ? null : message,
-        "cnt": cnt == null ? null : cnt,
+        "cod": cod,
+        "message": message,
+        "cnt": cnt,
         "list": list == null
             ? null
             : List<dynamic>.from(list!.map((x) => x.toJson())),
@@ -71,23 +71,23 @@ class City {
   String toRawJson() => json.encode(toJson());
 
   factory City.fromJson(Map<String, dynamic> json) => City(
-        id: json["id"] == null ? null : json["id"],
-        name: json["name"] == null ? null : json["name"],
+        id: json["id"],
+        name: json["name"],
         coord: json["coord"] == null ? null : Coord.fromJson(json["coord"]),
-        country: json["country"] == null ? null : json["country"],
-        timezone: json["timezone"] == null ? null : json["timezone"],
-        sunrise: json["sunrise"] == null ? null : json["sunrise"],
-        sunset: json["sunset"] == null ? null : json["sunset"],
+        country: json["country"],
+        timezone: json["timezone"],
+        sunrise: json["sunrise"],
+        sunset: json["sunset"],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id == null ? null : id,
-        "name": name == null ? null : name,
+        "id": id,
+        "name": name,
         "coord": coord == null ? null : coord!.toJson(),
-        "country": country == null ? null : country,
-        "timezone": timezone == null ? null : timezone,
-        "sunrise": sunrise == null ? null : sunrise,
-        "sunset": sunset == null ? null : sunset,
+        "country": country,
+        "timezone": timezone,
+        "sunrise": sunrise,
+        "sunset": sunset,
       };
 }
 
@@ -110,8 +110,8 @@ class Coord {
       );
 
   Map<String, dynamic> toJson() => {
-        "lat": lat == null ? null : lat,
-        "lon": lon == null ? null : lon,
+        "lat": lat,
+        "lon": lon,
       };
 }
 
@@ -156,7 +156,7 @@ class ListElement {
                 json["weather"].map((x) => Weather.fromJson(x))),
         clouds: json["clouds"] == null ? null : Clouds.fromJson(json["clouds"]),
         wind: json["wind"] == null ? null : Wind.fromJson(json["wind"]),
-        visibility: json["visibility"] == null ? null : json["visibility"],
+        visibility: json["visibility"],
         pop: json["pop"] == null ? null : json["pop"].toDouble(),
         rain: json["rain"] == null ? null : Rain.fromJson(json["rain"]),
         sys: json["sys"] == null ? null : Sys.fromJson(json["sys"]),
@@ -164,15 +164,15 @@ class ListElement {
       );
 
   Map<String, dynamic> toJson() => {
-        "dt": dt == null ? null : dt,
+        "dt": dt,
         "main": main == null ? null : main!.toJson(),
         "weather": weather == null
             ? null
             : List<dynamic>.from(weather!.map((x) => x.toJson())),
         "clouds": clouds == null ? null : clouds!.toJson(),
         "wind": wind == null ? null : wind!.toJson(),
-        "visibility": visibility == null ? null : visibility,
-        "pop": pop == null ? null : pop,
+        "visibility": visibility,
+        "pop": pop,
         "rain": rain == null ? null : rain!.toJson(),
         "sys": sys == null ? null : sys!.toJson(),
         "dt_txt": dtTxt == null ? null : dtTxt!.toIso8601String(),
@@ -191,11 +191,11 @@ class Clouds {
   String toRawJson() => json.encode(toJson());
 
   factory Clouds.fromJson(Map<String, dynamic> json) => Clouds(
-        all: json["all"] == null ? null : json["all"],
+        all: json["all"],
       );
 
   Map<String, dynamic> toJson() => {
-        "all": all == null ? null : all,
+        "all": all,
       };
 }
 
@@ -232,23 +232,23 @@ class Main {
             json["feels_like"] == null ? null : json["feels_like"].toDouble(),
         tempMin: json["temp_min"] == null ? null : json["temp_min"].toDouble(),
         tempMax: json["temp_max"] == null ? null : json["temp_max"].toDouble(),
-        pressure: json["pressure"] == null ? null : json["pressure"],
-        seaLevel: json["sea_level"] == null ? null : json["sea_level"],
-        grndLevel: json["grnd_level"] == null ? null : json["grnd_level"],
-        humidity: json["humidity"] == null ? null : json["humidity"],
+        pressure: json["pressure"],
+        seaLevel: json["sea_level"],
+        grndLevel: json["grnd_level"],
+        humidity: json["humidity"],
         tempKf: json["temp_kf"] == null ? null : json["temp_kf"].toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
-        "temp": temp == null ? null : temp,
-        "feels_like": feelsLike == null ? null : feelsLike,
-        "temp_min": tempMin == null ? null : tempMin,
-        "temp_max": tempMax == null ? null : tempMax,
-        "pressure": pressure == null ? null : pressure,
-        "sea_level": seaLevel == null ? null : seaLevel,
-        "grnd_level": grndLevel == null ? null : grndLevel,
-        "humidity": humidity == null ? null : humidity,
-        "temp_kf": tempKf == null ? null : tempKf,
+        "temp": temp,
+        "feels_like": feelsLike,
+        "temp_min": tempMin,
+        "temp_max": tempMax,
+        "pressure": pressure,
+        "sea_level": seaLevel,
+        "grnd_level": grndLevel,
+        "humidity": humidity,
+        "temp_kf": tempKf,
       };
 }
 
@@ -268,7 +268,7 @@ class Rain {
       );
 
   Map<String, dynamic> toJson() => {
-        "3h": the3H == null ? null : the3H,
+        "3h": the3H,
       };
 }
 
@@ -284,11 +284,11 @@ class Sys {
   String toRawJson() => json.encode(toJson());
 
   factory Sys.fromJson(Map<String, dynamic> json) => Sys(
-        pod: json["pod"] == null ? null : json["pod"],
+        pod: json["pod"],
       );
 
   Map<String, dynamic> toJson() => {
-        "pod": pod == null ? null : pod,
+        "pod": pod,
       };
 }
 
@@ -310,17 +310,17 @@ class Weather {
   String toRawJson() => json.encode(toJson());
 
   factory Weather.fromJson(Map<String, dynamic> json) => Weather(
-        id: json["id"] == null ? null : json["id"],
-        main: json["main"] == null ? null : json["main"],
-        description: json["description"] == null ? null : json["description"],
-        icon: json["icon"] == null ? null : json["icon"],
+        id: json["id"],
+        main: json["main"],
+        description: json["description"],
+        icon: json["icon"],
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id == null ? null : id,
-        "main": main == null ? null : main,
-        "description": description == null ? null : description,
-        "icon": icon == null ? null : icon,
+        "id": id,
+        "main": main,
+        "description": description,
+        "icon": icon,
       };
 }
 
@@ -341,13 +341,13 @@ class Wind {
 
   factory Wind.fromJson(Map<String, dynamic> json) => Wind(
         speed: json["speed"] == null ? null : json["speed"].toDouble(),
-        deg: json["deg"] == null ? null : json["deg"],
+        deg: json["deg"],
         gust: json["gust"] == null ? null : json["gust"].toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
-        "speed": speed == null ? null : speed,
-        "deg": deg == null ? null : deg,
-        "gust": gust == null ? null : gust,
+        "speed": speed,
+        "deg": deg,
+        "gust": gust,
       };
 }

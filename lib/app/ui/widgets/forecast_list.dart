@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_flutter_weather/app/core/network/API/model/forecast_weather.dart';
 
-import '../../core/models/forecast.dart';
 
 class ForecastList extends StatelessWidget {
   const ForecastList({Key? key, required this.title, required this.elements})
@@ -37,11 +36,11 @@ class ForecastList extends StatelessWidget {
                     children: [
                       Text(
                         element.dtTxt!.toLocal().hour.toString() + ':00',
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
                       Text(
                         element.weather!.first.main!,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),
@@ -49,7 +48,7 @@ class ForecastList extends StatelessWidget {
               ),
               Text(
                 (element.main!.temp!.toInt() - 273).toString() + '°C',
-                style: TextStyle(fontSize: 50, color: Colors.blue),
+                style: const TextStyle(fontSize: 50, color: Colors.blue),
               )
             ],
           );

@@ -11,11 +11,9 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static  List<Widget> _widgetOptions = <Widget>[
-    TodayScreen(),
-    ForecastScreen()
+  static  final List<Widget> _widgetOptions = <Widget>[
+    const TodayScreen(),
+    const ForecastScreen()
   ];
 
   void _onItemTapped(int index) {
