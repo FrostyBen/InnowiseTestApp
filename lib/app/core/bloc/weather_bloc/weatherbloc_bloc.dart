@@ -20,8 +20,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       if (state is WeatherStateLoaded) {
         final currentState = state as WeatherStateLoaded;
 
-        Share.share(currentState.currentWeather.name! +
-            currentState.currentWeather.main!.humidity!.toString());
+        Share.share(' the temperature in ${currentState.currentWeather.name! +
+            (currentState.currentWeather.main!.temp!.toInt() - 273).toString()}' +'℃'   );
       }
     });
   }
