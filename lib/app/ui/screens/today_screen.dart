@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 import '../../core/bloc/weather_bloc/weatherbloc_bloc.dart';
 
-class TodayScreen extends StatelessWidget {
+
+
+class TodayScreen extends StatefulWidget {
   const TodayScreen({Key? key}) : super(key: key);
 
+  @override
+  State<TodayScreen> createState() => _TodayScreenState();
+}
+
+class _TodayScreenState extends State<TodayScreen> {
   String getDirection(int direction) {
     if (direction < 45 && direction >= 0) {
       return 'N';
@@ -25,9 +33,14 @@ class TodayScreen extends StatelessWidget {
       return 'NW';
     }
   }
-
+ var subscription;
+  var connectionStatus;
+  
   @override
+  
   Widget build(BuildContext context) {
+    
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Today'),
@@ -39,6 +52,7 @@ class TodayScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           }
+ 
           if (state is WeatherStateLoaded) {
             return Center(
               child: SingleChildScrollView(
@@ -172,9 +186,10 @@ class TodayScreen extends StatelessWidget {
               ),
             );
           }
+         
           if (state is WeatherStateError) {
             return const Center(
-              child: Text('You have an error'),
+              child: Text('check your internt connection', style: TextStyle(fontSize: 20),),
             );
           }
           return Container();

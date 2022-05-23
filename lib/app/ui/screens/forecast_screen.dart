@@ -15,8 +15,9 @@ class ForecastScreen extends StatelessWidget {
         title:
             BlocBuilder<ForecastBloc, ForecastState>(builder: (context, state) {
           if (state is ForecastLoadingState) {
-            return Container();
+            return Center(child: CircularProgressIndicator());
           }
+
           if (state is ForecastLoadedState) {
             return Text(state.forecastWeather.city!.name!);
           }
@@ -25,11 +26,6 @@ class ForecastScreen extends StatelessWidget {
       ),
       body: BlocBuilder<ForecastBloc, ForecastState>(
         builder: (context, state) {
-          if (state is ForecastLoadingState) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
           if (state is ForecastLoadedState) {
             return CustomScrollView(slivers: [
               SliverToBoxAdapter(
@@ -39,10 +35,14 @@ class ForecastScreen extends StatelessWidget {
             ]);
           }
           if (state is ForecastErrorState) {
-            return const Center(
-              child: Text('You have an error'),
+            return Center(
+              child: Text(
+                'check your internt connection',
+                style: TextStyle(fontSize: 20),
+              ),
             );
           }
+         
           return Container();
         },
       ),

@@ -4,9 +4,8 @@ part of 'weatherbloc_bloc.dart';
 abstract class WeatherEvent {}
 
 class GetWeather extends WeatherEvent {
-  final String city;
-
-  GetWeather(this.city);
+ 
 }
 
 class ShareWeatherEvent extends WeatherEvent {}
+class InternetConnection extends WeatherEvent{}

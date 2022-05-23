@@ -25,17 +25,13 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => ForecastBloc(
-                  weatherRepositoryBase: context.read<WeatherRepositoryBase>())
-                ..add(
-                  GetForecastEvent(),
-                ),
+                  weatherRepositoryBase: context.read<WeatherRepositoryBase>())..add(GetForecastEvent())
+                
             ),
             BlocProvider(
               create: (context) => WeatherBloc(
-                  weatherRepositoryBase: context.read<WeatherRepositoryBase>())
-                ..add(
-                  GetWeather('temp text'),
-                ),
+                  weatherRepositoryBase: context.read<WeatherRepositoryBase>())..add(GetWeather())
+  
             ),
           ],
           child: MaterialApp(

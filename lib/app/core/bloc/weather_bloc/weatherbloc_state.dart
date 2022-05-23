@@ -12,5 +12,5 @@ class WeatherStateError extends WeatherState {}
 class WeatherStateLoaded extends WeatherState {
   final CurrentWeather currentWeather;
 
-  WeatherStateLoaded(this.currentWeather);
+  WeatherStateLoaded({required this.currentWeather});
 }

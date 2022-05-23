@@ -4,3 +4,4 @@ part of 'forecast_bloc.dart';
 abstract class ForecastEvent {}
 
 class GetForecastEvent extends ForecastEvent {}
+class InternetConnection extends ForecastEvent{}
